@@ -40,6 +40,14 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#ffff"
+        android:hint="Password"
+        android:textColorHint="#ffff"
+        android:id="@+id/edit7"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffff"
         android:hint="Phone"
         android:textColorHint="#ffff"
         android:id="@+id/edit3"/>
