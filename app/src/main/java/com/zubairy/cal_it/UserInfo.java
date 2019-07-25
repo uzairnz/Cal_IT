@@ -62,7 +62,7 @@ public class UserInfo extends AppCompatActivity {
         mFirebaseDatabase = mFirebaseInstance.getReference("Users");
 
         // store app title to 'app_title' node
-        mFirebaseInstance.getReference("app_title").setValue("Realtime Database");
+        mFirebaseInstance.getReference("app_title").setValue("Cal_It");
 
 
         // app_title change listener
@@ -128,27 +128,32 @@ public class UserInfo extends AppCompatActivity {
         // by implementing firebase auth
         if (TextUtils.isEmpty(userId)) {
             userId = mFirebaseDatabase.push().getKey();
+
         }
-        Users users = new Users(name, email , password , phone , age , weight , height);
-       if (users != null){
+        Users users = new Users(name, email, password, phone, age, weight, height);
+//       if (height != null && weight != null && email != null
+//               && age != null && name != null && password != null && phone!= null){
 
-           signIn(email , password);
-           Toast.makeText(getApplicationContext(),"Sign_Up Successful",Toast.LENGTH_SHORT).show();
-           mFirebaseDatabase.child(userId).setValue(users);
-           Intent intent = new Intent(UserInfo.this, MainActivity.class);
-           startActivity(intent);
-           finish();
-       }
+       // signIn(name, email,  password, phone, age, weight, height);
+//        Toast.makeText(getApplicationContext(), "SignUp Success!", Toast.LENGTH_LONG).show();
+        mFirebaseDatabase.child(userId).setValue(users);
 
-       else {
-           Toast.makeText(getApplicationContext(),"Sign_Up Not Successful",Toast.LENGTH_SHORT).show();
-           Intent intent = new Intent(UserInfo.this, login.class);
-           startActivity(intent);
-           finish();
-       }
+        signIn(name, email,  password, phone, age, weight, height);
 
-        //addUserChangeListener();
+//        Intent intent = new Intent(UserInfo.this, MainActivity.class);
+//        startActivity(intent);
+//        finish();
     }
+//
+//       else {
+//           Toast.makeText(getApplicationContext(), "Invalid Input", Toast.LENGTH_LONG).show();
+//           Intent intent = new Intent(UserInfo.this, login.class);
+//           startActivity(intent);
+//           finish();
+//       }
+//
+//        //addUserChangeListener();
+//    }
 
     /**
      * User data change listener
@@ -194,12 +199,21 @@ public class UserInfo extends AppCompatActivity {
         if (!TextUtils.isEmpty(email))
             mFirebaseDatabase.child(userId).child("email").setValue(email);
     } */
-   private void signIn(String email , String password){
+   private void signIn(String name, String email, String password, String phone, String age, String weight, String height){
        //String email = inputEmail.getText().toString().trim();
        //String password = inputPassword.getText().toString().trim();
        String Email = email;
        String Password = password;
+       String Name = name;
+       String Phone = phone;
+       String Age = age;
+       String Weight = weight;
+       String Height = height;
 
+       if (TextUtils.isEmpty(Name)) {
+           Toast.makeText(getApplicationContext(), "Enter Name!", Toast.LENGTH_SHORT).show();
+           return;
+       }
 
        if (TextUtils.isEmpty(Email)) {
            Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -211,10 +225,36 @@ public class UserInfo extends AppCompatActivity {
            return;
        }
 
+       if (TextUtils.isEmpty(Phone)) {
+           Toast.makeText(getApplicationContext(), "Enter Phone Number!", Toast.LENGTH_SHORT).show();
+           return;
+       }
+
+       if (TextUtils.isEmpty(Age)) {
+           Toast.makeText(getApplicationContext(), "Enter Age!", Toast.LENGTH_SHORT).show();
+           return;
+       }
+
+       if (TextUtils.isEmpty(Weight)) {
+           Toast.makeText(getApplicationContext(), "Enter Weight!", Toast.LENGTH_SHORT).show();
+           return;
+       }
+
+       if (TextUtils.isEmpty(Height)) {
+           Toast.makeText(getApplicationContext(), "Enter Height!", Toast.LENGTH_SHORT).show();
+           return;
+       }
+
        if (Password.length() < 6) {
            Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
            return;
        }
+
+       if (Phone.length() < 13) {
+           Toast.makeText(getApplicationContext(), "Invalid Phone Number!", Toast.LENGTH_SHORT).show();
+           return;
+       }
+
 
        // progressBar.setVisibility(View.VISIBLE);
        //create user
@@ -233,8 +273,8 @@ public class UserInfo extends AppCompatActivity {
                        }
                        else {
                            Toast.makeText(getApplicationContext(),"Sign_Up Successful",Toast.LENGTH_SHORT).show();
-                          // startActivity(new Intent(UserInfo.this, MainActivity.class));
-                           //finish();
+                           startActivity(new Intent(UserInfo.this, MainActivity.class));
+                           finish();
                        }
                    }
                });
