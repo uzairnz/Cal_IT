@@ -21,6 +21,7 @@
         android:layout_below="@+id/imageView"
         android:background="#fff"
         android:hint="E-mail"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
         android:layout_marginTop="80dp"/>
 
@@ -41,11 +42,13 @@
         android:layout_width="380dp"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:background="#00CC99"
+        android:background="#e54b3c"
+        android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_marginTop="100dp"
         android:layout_below="@+id/text2"
         android:text="Login"
-        android:textColor="#ffff" />
+        android:textColor="#fbcc44" />
 
     <Button
         android:id="@+id/b2"
@@ -54,10 +57,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/b1"
         android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_marginTop="10dp"
-        android:background="#00CC99"
-        android:text="Sign_Up"
-        android:textColor="#ffff" />
+        android:background="#e54b3c"
+        android:text="SignUp"
+        android:textColor="#fbcc44" />
 
 
 

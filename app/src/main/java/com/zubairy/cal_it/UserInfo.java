@@ -46,7 +46,7 @@ public class UserInfo extends AppCompatActivity {
         //getSupportActionBar().setDisplayShowHomeEnabled(true);
         //getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
-        txtDetails = (TextView) findViewById(R.id.contact_form_title);
+       // txtDetails = (TextView) findViewById(R.id.contact_form_title);
         inputName = (EditText) findViewById(R.id.edit1);
         inputEmail = (EditText) findViewById(R.id.edit2);
         inputPassword = (EditText) findViewById(R.id.edit7);
