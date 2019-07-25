@@ -1,5 +1,4 @@
-# Whatsfordinner
-https://www.youtube.com/watch?v=2attgCnfVWw
+# Cal-IT
 
 Android meal planner application.
 
