@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cal_it</string>
+    <string name="app_name">Cal IT</string>
     <string name="pick_image_intent_text">Select Image</string>
     <string-array name="types">
         <item>Mobile</item>
