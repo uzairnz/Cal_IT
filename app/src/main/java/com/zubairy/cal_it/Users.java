@@ -10,8 +10,8 @@ import com.google.firebase.database.IgnoreExtraProperties;
 @IgnoreExtraProperties
 public class Users {
 
-    public String name;
-    public String email , phone , age , height , weight;
+    public String name , email, password;
+    public String  phone , age , height , weight;
 
 
 
@@ -20,9 +20,10 @@ public class Users {
     public Users() {
     }
 
-    public Users(String name, String email , String phone , String age , String height , String weight) {
+    public Users(String name , String email, String password , String phone , String age , String height , String weight) {
         this.name = name;
         this.email = email;
+        this.password = password;
         this.age = age;
         this.phone = phone;
         this.height = height;
