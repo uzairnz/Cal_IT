@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="#D9EDF7"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="showCalendar"
+            android:padding="8dp"
+            android:stateListAnimator="@null"
+            android:text="Date"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/date"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/downarrow" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/date"
+            android:layout_centerHorizontal="true"
+            android:calendarViewShown="false" />
+
+        <TextView
+            android:id="@+id/b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/calendarView"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Breakfast"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/breakfastText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/b"
+            android:layout_alignStart="@+id/b"
+            android:layout_below="@+id/b"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="9dp"
+            android:text="Eating out"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/breakfastSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/b"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/b"
+            android:layout_below="@+id/b"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/breakfastSpinner"
+            android:layout_alignStart="@+id/breakfastSpinner"
+            android:layout_below="@+id/breakfastSpinner"
+            android:layout_marginTop="16dp"
+            android:text="Lunch"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lunchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/b"
+            android:layout_alignStart="@+id/b"
+            android:layout_below="@+id/l"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="9dp"
+            android:text="Eating out"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/lunchSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/b"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/b"
+            android:layout_below="@+id/l"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/breakfastSpinner"
+            android:layout_alignStart="@+id/breakfastSpinner"
+            android:layout_below="@+id/lunchSpinner"
+            android:layout_marginTop="16dp"
+            android:text="Dinner"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dinnerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/b"
+            android:layout_alignStart="@+id/b"
+            android:layout_below="@+id/d"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="9dp"
+            android:text="Eating out"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/dinnerSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/b"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/b"
+            android:layout_below="@+id/d"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible" />
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/ctrlAmtBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ingredientName"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+
+        android:background="?attr/colorButtonNormal"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#D9EDF7"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:text="+"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/subtract"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/add"
+            android:layout_toRightOf="@+id/add"
+            android:background="#D9EDF7"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:text="−"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/subtract"
+            android:layout_toRightOf="@+id/subtract"
+            android:background="#D9EDF7"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:text="x"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ingredientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/ctrlAmtBtn"
+        android:layout_toStartOf="@+id/ctrlAmtBtn"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="TextView"
+        android:textAllCaps="false"
+        android:textColor="@color/black" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/ingredientName"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/leftarrow" />
+
+</RelativeLayout>

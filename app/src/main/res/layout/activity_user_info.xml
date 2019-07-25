@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#808080"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/contact_form_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="5dp"
+        android:text="Cal_It"
+        android:textColor="#00CC99"
+        android:textSize="40sp"
+        android:typeface="serif" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffff"
+        android:hint="Name"
+        android:textColorHint="#ffff"
+        android:id="@+id/edit1"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#ffff"
+        android:hint="Email"
+        android:textColorHint="#ffff"
+        android:id="@+id/edit2"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffff"
+        android:hint="Phone"
+        android:textColorHint="#ffff"
+        android:id="@+id/edit3"/>
+
+    <EditText
+        android:id="@+id/edit4"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffff"
+        android:hint="Age"
+        android:textColorHint="#ffff" />
+
+    <EditText
+        android:id="@+id/edit5"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffff"
+        android:hint="Weight"
+        android:textColorHint="#ffff" />
+
+    <EditText
+        android:id="@+id/edit6"
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffff"
+        android:hint="Height"
+        android:textColorHint="#ffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#00CC99"
+        android:elevation="4dp"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:text="Submit"
+        android:textColor="#fff"
+        android:id="@+id/button1"/>
+
+</LinearLayout>

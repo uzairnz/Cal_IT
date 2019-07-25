@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:fillViewport="true">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/newDishImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="?attr/colorControlHighlight"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageButton
+            android:id="@+id/newImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/newDishImage"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/addicon" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/newDishImage"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <EditText
+                android:id="@+id/recipeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:maxLength="30"
+                android:hint="Recipe Name"
+                android:inputType="textCapWords"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/recipeCalories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Calories"
+                android:inputType="number"
+                android:maxLength="30" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/arrow"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:onClick="showDirections"
+                    android:paddingLeft="4dp"
+                    android:text="Directions"
+                    android:textAllCaps="false"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/arrow"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignEnd="@+id/button3"
+                    android:layout_alignRight="@+id/button3"
+
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/downarrow" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/directionsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/directions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="-8dp"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:hint="Enter directions here."
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="250" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ingredientsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/ingredientExpand"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/arrow"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:onClick="showIngredients"
+                android:paddingLeft="4dp"
+                android:text="Ingredients"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/arrow2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
+                android:layout_alignEnd="@+id/ingredientExpand"
+                android:layout_alignRight="@+id/ingredientExpand"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/downarrow" />
+
+            <LinearLayout
+                android:id="@+id/emptyLayout"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0px"
+                android:layout_height="0px" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/parent_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/ingredientsTitle"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <AutoCompleteTextView
+                android:id="@+id/ingredient1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="-8dp"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:hint="Ingredient 1"
+                android:imeActionLabel="done"
+                android:inputType="textCapSentences" />
+
+
+
+            <Button
+                android:id="@+id/addIngredient"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:text="Add Ingredient" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/save"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/parent_linear_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/colorAccent"
+            android:onClick="saveDish"
+            android:text="Save" />
+
+        <Button
+            android:id="@+id/deleteDish"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/save"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/colorAccent"
+            android:onClick="deleteDish"
+            android:text="Delete Dish"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/filler"
+            android:layout_below="@+id/deleteDish"
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+    </RelativeLayout>
+</ScrollView>

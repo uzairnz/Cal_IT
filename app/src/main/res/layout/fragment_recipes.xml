@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/parent_linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/getImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:srcCompat="?attr/colorButtonNormal" />
+
+            <TextView
+                android:id="@+id/test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/recipeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Recipe Name"
+                android:inputType="textCapWords|textPersonName" />
+
+            <Button
+                android:id="@+id/getRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="getRecipe"
+                android:text="Get " />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recipeLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <Button
+            android:id="@+id/goToNewDish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Add New dish"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnRemoveAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="removeAll"
+            android:text="Remove All"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</ScrollView>

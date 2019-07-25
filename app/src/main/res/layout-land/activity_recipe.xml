@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.zubairy.cal_it.Recipes2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_recipes2" />
+
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:background="@android:color/background_light"
+        android:elevation="10dp">
+
+        <FrameLayout
+            android:id="@+id/fragContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@android:color/background_light"
+            android:paddingLeft="40dp"></FrameLayout>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:background="?android:attr/colorBackground"
+            android:foreground="?attr/selectableItemBackground"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/rightarrow" />
+
+
+    </FrameLayout>
+
+
+</FrameLayout>

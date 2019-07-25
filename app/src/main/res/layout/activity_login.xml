@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#808080">
+
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text2"
+        android:layout_alignStart="@+id/text2"
+        android:layout_alignLeft="@+id/text2"
+        android:layout_alignEnd="@+id/text2"
+        android:layout_alignRight="@+id/text2"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:text="Sign_Up"
+        android:textColor="#ffff"
+        android:background="#00CC99"/>
+
+    <EditText
+        android:id="@+id/text1"
+        android:hint="E-mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:padding="8dp"
+        android:background="#fff" />
+
+    <EditText
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:padding="8dp"
+        android:background="#fff"
+        android:hint="Password"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/text1" />
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="#ffff"
+        android:background="#00CC99"
+        android:layout_below="@+id/text2"
+        android:layout_marginTop="17dp"
+        android:layout_alignStart="@+id/text2"
+        android:layout_alignEnd="@+id/text2"
+        android:layout_alignLeft="@+id/text2"
+        android:layout_alignRight="@+id/text2" />
+
+
+</RelativeLayout>
