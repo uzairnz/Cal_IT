@@ -1,79 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_x"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zubairy.cal_it.MainActivity">
+    android:background="#edeeef"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/parent_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/whatsfordinner" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
+            android:src="@drawable/whatsfordinner" />
 
-    <ImageButton
-        android:id="@+id/meals"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:foreground="?attr/selectableItemBackground"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/groceries"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/recipes"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/meals" />
+        <ImageButton
+            android:id="@+id/meals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/meals" />
 
     <ImageButton
         android:id="@+id/recipes"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:foreground="?attr/selectableItemBackground"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/newdish"
-        app:layout_constraintLeft_toRightOf="@+id/meals"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/recipes" />
+        android:src="@drawable/recipes" />
 
     <ImageButton
         android:id="@+id/groceries"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:foreground="?attr/selectableItemBackground"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/newdish"
-        app:layout_constraintTop_toBottomOf="@+id/meals"
-        app:srcCompat="@drawable/groceries" />
+        android:src="@drawable/groceries" />
 
     <ImageButton
         android:id="@+id/newdish"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:foreground="?attr/selectableItemBackground"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/groceries"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipes"
-        app:srcCompat="@drawable/newdish" />
+        android:src="@drawable/newdish" />
 
-</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>
