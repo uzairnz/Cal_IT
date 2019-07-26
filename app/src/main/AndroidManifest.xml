@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/HiddenTitleTheme">
+        <activity android:name=".Profile"></activity>
         <activity android:name=".UserInfo" />
         <activity android:name=".CamCheck" />
         <activity android:name=".Nutri" />
@@ -25,8 +26,7 @@
         <activity android:name=".SignUp" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".Popup"
             android:screenOrientation="portrait"

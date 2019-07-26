@@ -102,7 +102,7 @@ public class UserInfo extends AppCompatActivity {
 //                if (TextUtils.isEmpty(userId)) {
 //                    createUser(name, email , phone , age , weight , height);
 //                } else {
-//                   // updateUser(name, email);
+//                    updateUser(name, email);
 //                }
             }
         });
