@@ -29,4 +29,12 @@ public class Users {
         this.height = height;
         this.weight = weight;
     }
+
+    public Users(String name , String phone , String age , String height , String weight){
+        this.name = name;
+        this.age = age;
+        this.phone = phone;
+        this.height = height;
+        this.weight = weight;
+    }
 }

@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.zubairy.cal_it.UserInfo;
 
 public class login extends AppCompatActivity {
 
@@ -34,10 +35,10 @@ public class login extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
 
 
-      /*  if (auth.getCurrentUser() != null) {
+        if (auth.getCurrentUser() != null) {
             startActivity(new Intent(login.this, MainActivity.class));
             finish();
-        } */
+        }
 
         // set the view now
         setContentView(R.layout.activity_login);
