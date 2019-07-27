@@ -1,5 +1,6 @@
 package com.zubairy.cal_it;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +23,7 @@ public class Profile extends AppCompatActivity {
     private TextView txtDetails;
     private EditText inputName, inputPhone , inputAge , inputWeight , inputHeight;
     private Button btnSave;
+    private Button mBtnLogout;
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
 
@@ -42,6 +45,7 @@ public class Profile extends AppCompatActivity {
         inputWeight = (EditText) findViewById(R.id.edit5);
         inputHeight = (EditText) findViewById(R.id.edit6);
         btnSave = (Button) findViewById(R.id.editbutton1);
+        mBtnLogout = findViewById(R.id.editbutton2);
 
         mFirebaseInstance = FirebaseDatabase.getInstance();
 
@@ -91,7 +95,21 @@ public class Profile extends AppCompatActivity {
         });
 
         toggleButton();
+
+        mBtnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(Profile.this,login.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                  finish();
+            }
+        });
     }
+
+
+
 
     // Changing button text
     private void toggleButton() {

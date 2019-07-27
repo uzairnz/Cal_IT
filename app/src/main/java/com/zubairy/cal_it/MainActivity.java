@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
                         //startActivity(dbmanager);
 
 
-                startActivity(new Intent(MainActivity.this, Profile.class));
+                startActivity(new Intent(MainActivity.this, NutriDataActivity.class));
             }
         });
 

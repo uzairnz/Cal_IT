@@ -80,6 +80,8 @@
                 android:value="com.zubairy.cal_it.RecipeActivity" />
         </activity>
         <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+        <activity android:name=".NutriDataActivity" />
+
         <activity
             android:name=".AndroidDatabaseManager"
             android:label="@string/app_name" />

@@ -37,4 +37,32 @@ public class Users {
         this.height = height;
         this.weight = weight;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
 }
