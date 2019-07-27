@@ -72,7 +72,6 @@ public class UserInfo extends AppCompatActivity {
                 String age = inputAge.getText().toString();
                 String weight = inputWeight.getText().toString();
                 String height = inputHeight.getText().toString();
-//                createUser(name, email , password , phone , age , weight , height);
                 signIn(name, email,  password, phone, age, weight, height);
 
             }
@@ -166,7 +165,6 @@ public class UserInfo extends AppCompatActivity {
 
                 } else {
                     DatabaseReference mRef = FirebaseDatabase.getInstance().getReference("users");
-//                   mFirebaeUSer = auth.getCurrentUser();
                     Users user = new Users(Name, email, Password, phone, Age, Height, Weight);
                     String uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     mRef.child(uId).setValue(user);
