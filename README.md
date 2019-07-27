@@ -1,5 +1,5 @@
 <img src="https://github.com/UmairIqbal69/Cal_IT/blob/master/app/src/main/res/drawable-xhdpi/cal_it.png/"
- alt="CAL IT" style="width:25;height:25;">
+ alt="CAL IT" style="width:5;height:5;">
 # Cal-IT
 Android meal planner application.
 
