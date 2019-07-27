@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -40,14 +42,14 @@ public class UserInfo extends AppCompatActivity {
 
         // to get data from the activity
 
-        inputName = (EditText) findViewById(R.id.edit1);
-        inputEmail = (EditText) findViewById(R.id.edit2);
-        inputPassword = (EditText) findViewById(R.id.edit7);
-        inputPhone = (EditText) findViewById(R.id.edit3);
-        inputAge = (EditText) findViewById(R.id.edit4);
-        inputWeight = (EditText) findViewById(R.id.edit5);
-        inputHeight = (EditText) findViewById(R.id.edit6);
-        btnSave = (Button) findViewById(R.id.button1);
+        inputName =  findViewById(R.id.edit1);
+        inputEmail =  findViewById(R.id.edit2);
+        inputPassword =  findViewById(R.id.edit7);
+        inputPhone =  findViewById(R.id.edit3);
+        inputAge =  findViewById(R.id.edit4);
+        inputWeight =  findViewById(R.id.edit5);
+        inputHeight =  findViewById(R.id.edit6);
+        btnSave =  findViewById(R.id.button1);
 
         mFirebaseInstance = FirebaseDatabase.getInstance();
 
@@ -70,7 +72,8 @@ public class UserInfo extends AppCompatActivity {
                 String age = inputAge.getText().toString();
                 String weight = inputWeight.getText().toString();
                 String height = inputHeight.getText().toString();
-                createUser(name, email , password , phone , age , weight , height);
+//                createUser(name, email , password , phone , age , weight , height);
+                signIn(name, email,  password, phone, age, weight, height);
 
             }
         });
@@ -94,83 +97,113 @@ public class UserInfo extends AppCompatActivity {
 
     }
 
-   private void signIn(String name, String email, String password, String phone, String age, String weight, String height){
+    private void signIn(String name, final String email, final String password, final String phone, String age, String weight, String height){
 
-       String Email = email;
-       String Password = password;
-       String Name = name;
-       String Phone = phone;
-       String Age = age;
-       String Weight = weight;
-       String Height = height;
+        String Email = email;
+        final String Password = password;
+        final String Name = name;
+        String Phone = phone;
+        final String Age = age;
+        final String Weight = weight;
+        final String Height = height;
 
-       if (TextUtils.isEmpty(Name)) {
-           Toast.makeText(getApplicationContext(), "Enter Name!", Toast.LENGTH_SHORT).show();
-           return;
-       }
+        if (TextUtils.isEmpty(Name)) {
+            Toast.makeText(getApplicationContext(), "Enter Name!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-       if (TextUtils.isEmpty(Email)) {
-           Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
-           return;
-       }
+        if (TextUtils.isEmpty(Email)) {
+            Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-       if (TextUtils.isEmpty(Password)) {
-           Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
-           return;
-       }
+        if (TextUtils.isEmpty(Password)) {
+            Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-       if (TextUtils.isEmpty(Phone)) {
-           Toast.makeText(getApplicationContext(), "Enter Phone Number!", Toast.LENGTH_SHORT).show();
-           return;
-       }
+        if (TextUtils.isEmpty(Phone)) {
+            Toast.makeText(getApplicationContext(), "Enter Phone Number!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-       if (TextUtils.isEmpty(Age)) {
-           Toast.makeText(getApplicationContext(), "Enter Age!", Toast.LENGTH_SHORT).show();
-           return;
-       }
+        if (TextUtils.isEmpty(Age)) {
+            Toast.makeText(getApplicationContext(), "Enter Age!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-       if (TextUtils.isEmpty(Weight)) {
-           Toast.makeText(getApplicationContext(), "Enter Weight!", Toast.LENGTH_SHORT).show();
-           return;
-       }
+        if (TextUtils.isEmpty(Weight)) {
+            Toast.makeText(getApplicationContext(), "Enter Weight!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-       if (TextUtils.isEmpty(Height)) {
-           Toast.makeText(getApplicationContext(), "Enter Height!", Toast.LENGTH_SHORT).show();
-           return;
-       }
+        if (TextUtils.isEmpty(Height)) {
+            Toast.makeText(getApplicationContext(), "Enter Height!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-       if (Password.length() < 6) {
-           Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
-           return;
-       }
+        if (Password.length() < 6) {
+            Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-       if (Phone.length() < 13) {
-           Toast.makeText(getApplicationContext(), "Invalid Phone Number!", Toast.LENGTH_SHORT).show();
-           return;
-       }
+        if (Phone.length() < 13) {
+            Toast.makeText(getApplicationContext(), "Invalid Phone Number!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 
-       // progressBar.setVisibility(View.VISIBLE);
-       //create user
-       auth.createUserWithEmailAndPassword(email, password)
-               .addOnCompleteListener(UserInfo.this, new OnCompleteListener<AuthResult>() {
-                   @Override
-                   public void onComplete(@NonNull Task<AuthResult> task) {
-                       Toast.makeText(UserInfo.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-                       //progressBar.setVisibility(View.GONE);
-                       // If sign in fails, display a message to the user. If sign in succeeds
-                       // the auth state listener will be notified and logic to handle the
-                       // signed in user can be handled in the listener.
-                       if (!task.isSuccessful()) {
-                           Toast.makeText(UserInfo.this, "Authentication failed." + task.getException(),
-                                   Toast.LENGTH_SHORT).show();
-                       }
-                       else {
-                           Toast.makeText(getApplicationContext(),"Sign_Up Successful",Toast.LENGTH_SHORT).show();
-                           startActivity(new Intent(UserInfo.this, MainActivity.class));
-                           finish();
-                       }
-                   }
-               });
-   }
+        // progressBar.setVisibility(View.VISIBLE);
+        //create user
+//       auth.createUserWithEmailAndPassword(email, password)
+//               .addOnCompleteListener(UserInfo.this, new OnCompleteListener<AuthResult>() {
+//                   @Override
+//                   public void onComplete(@NonNull Task<AuthResult> task) {
+//                       Toast.makeText(UserInfo.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+//                       //progressBar.setVisibility(View.GONE);
+//                       // If sign in fails, display a message to the user. If sign in succeeds
+//                       // the auth state listener will be notified and logic to handle the
+//                       // signed in user can be handled in the listener.
+//                       if (!task.isSuccessful()) {
+//                           Toast.makeText(UserInfo.this, "Authentication failed." + task.getException(),
+//                                   Toast.LENGTH_SHORT).show();
+//                       }
+//                       else {
+//                           Toast.makeText(getApplicationContext(),"Sign_Up Successful",Toast.LENGTH_SHORT).show();
+//                           startActivity(new Intent(UserInfo.this, MainActivity.class));
+//                           finish();
+//                       }
+//                   }
+//               });
+
+
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (!task.isSuccessful()) {
+                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                        Toast.makeText(UserInfo.this, "Email Exist", Toast.LENGTH_SHORT).show();
+                    }
+                    if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                        Toast.makeText(UserInfo.this, "Email is not correct", Toast.LENGTH_SHORT).show();
+                    }
+
+                } else {
+                    DatabaseReference mRef = FirebaseDatabase.getInstance().getReference("users");
+//                   mFirebaeUSer = auth.getCurrentUser();
+                    Users user = new Users(email,Password,Name,phone,Age,Weight,Height);
+                    String uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                    mRef.child(uId).setValue(user);
+
+
+                    Intent intent = new Intent(UserInfo.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+
+
+                }
+            }
+        });
+    }
 }

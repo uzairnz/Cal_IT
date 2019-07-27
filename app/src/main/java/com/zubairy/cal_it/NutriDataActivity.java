@@ -20,7 +20,7 @@ public class NutriDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nutri_data);
         final TextView name = findViewById(R.id.textviewwww);
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Users");
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
         String userId = FirebaseAuth.getInstance().getUid();
 
         mDatabase.child(userId).addValueEventListener(new ValueEventListener() {
@@ -28,14 +28,14 @@ public class NutriDataActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 Users user = dataSnapshot.getValue(Users.class);
-name.setText(user.getName());
-          //      Log.d(TAG, "User name: " + user.getName() + ", email " + user.getEmail());
+                name.setText(user.getName());
+                //      Log.d(TAG, "User name: " + user.getName() + ", email " + user.getEmail());
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-               // Log.w(TAG, "Failed to read value.", error.toException());
+                // Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
     }
