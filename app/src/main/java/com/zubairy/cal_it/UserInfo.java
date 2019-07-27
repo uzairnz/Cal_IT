@@ -146,7 +146,7 @@ public class UserInfo extends AppCompatActivity {
             return;
         }
 
-        if (Phone.length() < 13) {
+        if (Phone.length() < 11) {
             Toast.makeText(getApplicationContext(), "Invalid Phone Number!", Toast.LENGTH_SHORT).show();
             return;
         }

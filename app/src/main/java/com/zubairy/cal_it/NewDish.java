@@ -535,23 +535,6 @@ public class NewDish extends AppCompatActivity {
         ImagePicker.pickImage(this);
     }
 
-    /*
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode != RESULT_CANCELED) {
-            switch (requestCode) {
-                case PICK_IMAGE_ID:
-                    Bitmap bitmap = ImagePicker.getImageFromResult(this, resultCode, data);
-                    newDishImg.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 1000, 1000, false));
-                    newDishImg.setAdjustViewBounds(true);
-                    break;
-                default:
-                    super.onActivityResult(requestCode, resultCode, data);
-                    break;
-            }
-        }
-    }
-    */
 
 
     @Override

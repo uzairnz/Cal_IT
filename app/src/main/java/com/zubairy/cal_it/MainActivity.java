@@ -69,6 +69,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton facts = (ImageButton) findViewById(R.id.facts);
+        facts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, facts.class));
+            }
+        });
+
+        ImageButton blog = (ImageButton) findViewById(R.id.blog);
+        blog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, blog.class));
+            }
+        });
+
     }
 
     @Override
