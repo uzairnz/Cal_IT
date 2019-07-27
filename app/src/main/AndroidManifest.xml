@@ -14,7 +14,6 @@
         android:theme="@style/HiddenTitleTheme">
         <activity android:name=".Profile"></activity>
         <activity android:name=".UserInfo" />
-        <activity android:name=".CamCheck" />
         <activity android:name=".Nutri" />
         <activity android:name=".login">
             <intent-filter>
@@ -23,14 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUp" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".Popup"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.CustomTheme" />
         <activity
             android:name=".NewDish"
             android:label="New Dish"
