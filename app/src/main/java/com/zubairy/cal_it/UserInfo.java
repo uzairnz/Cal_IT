@@ -153,30 +153,6 @@ public class UserInfo extends AppCompatActivity {
         }
 
 
-        // progressBar.setVisibility(View.VISIBLE);
-        //create user
-//       auth.createUserWithEmailAndPassword(email, password)
-//               .addOnCompleteListener(UserInfo.this, new OnCompleteListener<AuthResult>() {
-//                   @Override
-//                   public void onComplete(@NonNull Task<AuthResult> task) {
-//                       Toast.makeText(UserInfo.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-//                       //progressBar.setVisibility(View.GONE);
-//                       // If sign in fails, display a message to the user. If sign in succeeds
-//                       // the auth state listener will be notified and logic to handle the
-//                       // signed in user can be handled in the listener.
-//                       if (!task.isSuccessful()) {
-//                           Toast.makeText(UserInfo.this, "Authentication failed." + task.getException(),
-//                                   Toast.LENGTH_SHORT).show();
-//                       }
-//                       else {
-//                           Toast.makeText(getApplicationContext(),"Sign_Up Successful",Toast.LENGTH_SHORT).show();
-//                           startActivity(new Intent(UserInfo.this, MainActivity.class));
-//                           finish();
-//                       }
-//                   }
-//               });
-
-
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -191,7 +167,7 @@ public class UserInfo extends AppCompatActivity {
                 } else {
                     DatabaseReference mRef = FirebaseDatabase.getInstance().getReference("users");
 //                   mFirebaeUSer = auth.getCurrentUser();
-                    Users user = new Users(email,Password,Name,phone,Age,Weight,Height);
+                    Users user = new Users(Name, email, Password, phone, Age, Height, Weight);
                     String uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     mRef.child(uId).setValue(user);
 

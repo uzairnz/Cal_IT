@@ -27,18 +27,16 @@ public class Profile extends AppCompatActivity {
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
 
-    private String userId;
+    String userId = FirebaseAuth.getInstance().getUid();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        // Displaying toolbar icon
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
-       // txtDetails = (TextView) findViewById(R.id.txt_user);
         inputName = (EditText) findViewById(R.id.edit1);
         inputPhone = (EditText) findViewById(R.id.edit3);
         inputAge = (EditText) findViewById(R.id.edit4);
@@ -55,26 +53,6 @@ public class Profile extends AppCompatActivity {
         // store app title to 'app_title' node
         mFirebaseInstance.getReference("Cal_It").setValue("Realtime Database");
 
-        // app_title change listener
-//        mFirebaseInstance.getReference("Cal_It").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                Log.e(TAG, "App title updated");
-//
-//                String appTitle = dataSnapshot.getValue(String.class);
-//
-//                // update toolbar title
-//                getSupportActionBar().setTitle(appTitle);
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError error) {
-//                // Failed to read value
-//                Log.e(TAG, "Failed to read app title value.", error.toException());
-//            }
-//        });
-
-        // Save / update the user
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,7 +109,7 @@ public class Profile extends AppCompatActivity {
             userId = mFirebaseDatabase.push().getKey();
         }
 
-        Users user = new Users(name, phone , age , weight , height);
+        Users user = new Users(name, phone , age , height , weight);
 
         mFirebaseDatabase.child(userId).setValue(user);
 
@@ -154,14 +132,8 @@ public class Profile extends AppCompatActivity {
                     return;
                 }
 
-                Log.e(TAG, "User data is changed!" + user.name + user.phone + user.age + user.weight + user.height);
+                Log.e(TAG, "User data is changed!" + user.name + user.phone + user.age + user.height + user.weight);
 
-                // Display newly updated data
-               // txtDetails.setText(user.name + user.phone + user.age + user.weight + user.height);
-
-                // clear edit text
-               // inputPhone.setText("");
-                //inputName.setText("");
 
                 toggleButton();
             }
@@ -180,13 +152,13 @@ public class Profile extends AppCompatActivity {
             mFirebaseDatabase.child(userId).child("name").setValue(name);
 
         if (!TextUtils.isEmpty(phone))
-            mFirebaseDatabase.child(userId).child("email").setValue(phone);
+            mFirebaseDatabase.child(userId).child("phone").setValue(phone);
 
         if (!TextUtils.isEmpty(age))
             mFirebaseDatabase.child(userId).child("age").setValue(age);
 
         if (!TextUtils.isEmpty(weight))
-            mFirebaseDatabase.child(userId).child("weight").setValue(weight);
+            mFirebaseDatabase.child(userId).child("height").setValue(weight);
 
         if (!TextUtils.isEmpty(height))
             mFirebaseDatabase.child(userId).child("weight").setValue(weight);

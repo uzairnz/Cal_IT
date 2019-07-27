@@ -14,7 +14,6 @@
         android:theme="@style/HiddenTitleTheme">
         <activity android:name=".Profile"></activity>
         <activity android:name=".UserInfo" />
-        <activity android:name=".Nutri" />
         <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
