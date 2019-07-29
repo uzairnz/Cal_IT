@@ -1,5 +1,4 @@
 # Cal-IT
-
 Android meal planner application.
 
 1) Add new recipe to the app (New Dish) <br />
