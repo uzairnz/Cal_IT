@@ -41,7 +41,7 @@ public class facts extends AppCompatActivity {
             }
         });
 
-        mWebview.loadUrl("https://nutritionfacts.org/topics/");
+        mWebview.loadUrl("https://www.nhs.uk/live-well/healthy-weight/calorie-checker/");
         setContentView(mWebview);
     }
 }

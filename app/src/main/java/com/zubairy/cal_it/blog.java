@@ -41,7 +41,7 @@ public class blog extends AppCompatActivity {
             }
         });
 
-        mWebview.loadUrl("https://www.nhs.uk/live-well/healthy-weight/calorie-checker/");
+        mWebview.loadUrl("https://www.nhs.uk/live-well/healthy-weight/bmi-calculator/");
         setContentView(mWebview);
     }
 }
