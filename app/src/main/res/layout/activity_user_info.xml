@@ -22,7 +22,7 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
+        android:hint="UserName"
         android:id="@+id/edit1"/>
 
     <EditText
@@ -43,7 +43,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
-        android:hint="Phone"
+        android:hint="Phone(03*********)"
         android:id="@+id/edit3"/>
 
     <EditText

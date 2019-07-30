@@ -3,7 +3,9 @@ package com.zubairy.cal_it;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -28,13 +30,18 @@ public class NutriDataActivity extends AppCompatActivity {
 
                 Users user = dataSnapshot.getValue(Users.class);
                 name.setText(user.getName());
+                name.setText(user.getEmail());
                 //      Log.d(TAG, "User name: " + user.getName() + ", email " + user.getEmail());
+                Toast.makeText(NutriDataActivity.this, "Connection Successful " ,Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
                 // Log.w(TAG, "Failed to read value.", error.toException());
+                Toast.makeText(NutriDataActivity.this, "Failed to read value." ,Toast.LENGTH_SHORT).show();
+
             }
         });
     }
