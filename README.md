@@ -10,17 +10,17 @@ Android meal planner application.
 - Calorie checker with over 150,000 different food and drinks <br />
 
 
-###Clone this Repo
+### Clone this Repo
 
 `$ git clone https://github.com/uzairnz/Cal_IT`
 
-####Installation
+#### Installation
 
 - Add google-services.json from your Firebase
 - Enable Relatime Database
 - Enable Emailpassword in Authentication Signin Method.
 
-###Screenshots
+### Screenshots
 
 ![](https://github.com/uzairnz/Cal_IT/blob/master/ss/Cal_IT1.jpg)
 
