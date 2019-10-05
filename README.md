@@ -1,4 +1,7 @@
 # Cal-IT
+
+![](https://github.com/uzairnz/Cal_IT/blob/master/ss/logo.png)
+
 Android meal planner application.
 
 ### Features
@@ -26,8 +29,8 @@ Android meal planner application.
 
 ![](https://github.com/uzairnz/Cal_IT/blob/master/ss/Cal_IT2.jpg)
 
-![](https://github.com/uzairnz/Cal_IT/blob/master/ss/CAL_IT3.jpg)
+![](https://github.com/uzairnz/Cal_IT/blob/master/ss/CAl_IT3.jpg)
 
-![](https://github.com/uzairnz/Cal_IT/blob/master/ss/CAL_IT4.jpg)
+![](https://github.com/uzairnz/Cal_IT/blob/master/ss/CAl_IT4.jpg)
 
-![](https://github.com/uzairnz/Cal_IT/blob/master/ss/CAL_IT5.jpg)
+![](https://github.com/uzairnz/Cal_IT/blob/master/ss/CAl_IT5.jpg)
