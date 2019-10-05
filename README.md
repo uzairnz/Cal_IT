@@ -37,6 +37,7 @@ Android meal planner application.
 
 # Contributors
 [Uzair Majeed](https://github.com/uzairnz) - Author
+
 [Umair Iqbal](https://github.com/UmairIqbal69) -Co Author
 
 License
