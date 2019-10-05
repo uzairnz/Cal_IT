@@ -21,6 +21,7 @@ Android meal planner application.
 - Enable Emailpassword in Authentication Signin Method.
 
 ###Screenshots
+
 ![](https://github.com/uzairnz/Cal_IT/blob/master/ss/Cal_IT1.jpg)
 
 ![](https://github.com/uzairnz/Cal_IT/blob/master/ss/Cal_IT2.jpg)
